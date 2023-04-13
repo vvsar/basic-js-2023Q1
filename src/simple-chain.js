@@ -17,7 +17,7 @@ const chainMaker = {
   },
   removeLink(pos) {
     // throw new NotImplementedError('Not implemented');
-    if (typeof pos != "number" || pos % 1 != 0 || (pos > 0 && pos <= this.array.length)) {
+    if (typeof pos === "number" && pos % 1 === 0 && (pos > 0 && pos <= this.array.length)) {
       this.array.splice(pos - 1, 1);
       return this;
     }

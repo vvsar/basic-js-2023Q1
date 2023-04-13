@@ -16,8 +16,9 @@ function getSeason(date) {
   if (date == null) {
     return 'Unable to determine the time of year!';
   }
-  if (Object.prototype.toString.call(date) != "[object Date]") 
+  if (Object.prototype.toString.call(date) != "[object Date]" || Object.getOwnPropertyNames(date).length > 0) {
     throw new Error('Invalid date!');
+  }
   let date1 = new Date(date);
   let seasons = ['winter', 'spring', 'summer', 'autumn']
   let m = date1.getMonth();
